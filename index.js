@@ -13,12 +13,14 @@ const questions = [
   {
     type: 'input',
     name: 'description',
-    message: 'Describe what your project is about.'
+    message: 'Describe what your project is about.',
+    default: 'Descriptions'
   },
   {
     type: 'input',
     name: 'installation',
-    message: 'What are the steps required to install your project?'
+    message: 'What are the steps required to install your project?',
+    default:
   },
   {
     type: 'input',
@@ -39,7 +41,7 @@ const questions = [
   {
     type: 'input',
     name: 'test',
-    message: 'Provide any tests or example on how to run your project'
+    message: 'Provide any tests or example on how to run your project.'
   }
 ]
 
@@ -60,7 +62,7 @@ async function init() {
     const markdown = generateMarkdown(userResponse)
     console.log(markdown)
 
-    await writeFileAsync('README.md', markdown)
+    await writeFileAsync('exampleREADME.md', markdown)
   }
   catch (err) { console.log(err) }
 }
